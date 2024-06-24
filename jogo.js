@@ -106,7 +106,5 @@ function ladoAleatorio() {
             return 'ladoA'
         case 1:
             return 'ladoB'
-
     }
-
 }    
