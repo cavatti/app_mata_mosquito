@@ -3,6 +3,8 @@
 var altura = 0
 var largura = 0
 var vidas = 1
+var tempo = 10
+
 function ajustaTamanhoPalcoJogo() {
     altura = window.innerHeight
     largura = window.innerHeight
@@ -12,6 +14,21 @@ function ajustaTamanhoPalcoJogo() {
 
 ajustaTamanhoPalcoJogo()
 
+var cronometro = setInterval(function() {
+
+    tempo -= 1
+    
+    if(tempo < 0) {
+        clearInterval(cronometro)
+        clearInterval(cria_mosquito)
+        window.location.href = 'vitoria.html'
+
+    }else {
+    document.getElementById('cronometro').innerHTML = tempo
+    }
+    
+}, 1000)
+
 function posicaoRandomica(){
 
     //remover o mosquito anterior (caso exista)
@@ -20,7 +37,7 @@ function posicaoRandomica(){
 
         if(vidas > 3) {
 
-            alert('Interromper o jogo')
+            window.location.href = 'fim_jogo.html'
         } else {
         document.getElementById('v' + vidas).src="imagens/coracao_vazio.png"
 
