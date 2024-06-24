@@ -5,7 +5,7 @@ var largura = 0
 var vidas = 1
 var tempo = 60
 
-var criaMosquitoTempo = 1500
+var criaMosquitoTempo = 1200
 
 var nivel = window.location.search
 nivel = nivel.replace('?', '')
